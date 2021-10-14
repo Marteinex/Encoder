@@ -22,8 +22,8 @@ void loop() {
   most=digitalRead(outputCLK);
   if (most != ezelott)
   {
-    if(digitalRead(outputDT) != most) { szamlalo++;}
-      else { szamlalo--;}
+    if(digitalRead(outputDT) != most) { szamlalo=szamlalo-10;}
+      else { szamlalo=szamlalo+10;}
      szamlalo=constrain(szamlalo, 0,100);
      Serial.print("A fényerő: ");
     Serial.println(szamlalo);
